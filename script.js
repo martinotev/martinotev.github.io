@@ -101,4 +101,17 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(nextSlide, 5000); // Change slide every 5 seconds
     showSlide(0); // Show first slide
   }
+
+  // Add hover effects to nav buttons
+  const navItems = document.querySelectorAll("nav ul li a");
+
+  navItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      item.classList.add("hovered");
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.classList.remove("hovered");
+    });
+  });
 });

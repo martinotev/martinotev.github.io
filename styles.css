@@ -18,16 +18,51 @@ header {
   height: 250px;
 }
 
+/* Reset list styling */
 nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Arrange items in a horizontal row */
+  justify-content: center; /* Center the menu items */
+}
+
+nav ul li {
+  margin: 0 10px; /* Add some spacing between menu items */
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.4s ease;
+  display: block; /* Ensure the clickable area is consistent */
+}
+
+/* Hover effect */
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #0038a7; /* Hover background color */
+  transition: top 0.4s ease;
+  z-index: -1;
+}
+
+nav ul li a.hovered::before {
+  top: 0;
+}
+
+nav ul li a.hovered {
+  transform: scale(1.05); /* Slightly enlarge the button */
+  color: #fff; /* Keep the text color white */
 }
 
 .info {
@@ -44,7 +79,55 @@ nav ul li a {
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
-  margin-bottom: 2rem; /* Add padding between the order buttons and the video */
+  margin-bottom: 2rem;
+}
+
+/* Button styles for anchor tags */
+.order-buttons a {
+  text-decoration: none; /* Ensure no underline */
+}
+
+.doordash-btn,
+.ubereats-btn {
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 50px; /* Rounded buttons */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: all 0.3s ease;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Specific button styles */
+.doordash-btn {
+  background-color: #ff3008;
+  color: #fff;
+}
+
+.ubereats-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.doordash-btn:hover {
+  background-color: #ff4a28;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.ubereats-btn:hover {
+  background-color: #222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.doordash-btn img,
+.ubereats-btn img {
+  height: 20px; /* Adjusted icon size */
+  width: auto;
 }
 
 /* Button Styles */
@@ -213,11 +296,6 @@ footer nav ul li {
     gap: 0.5rem;
   }
 
-  .order-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .video-banner {
     height: 300px;
   }
@@ -331,13 +409,6 @@ form button[type="submit"]:hover {
   body {
     background-color: #fff;
     color: #000;
-  }
-
-  header,
-  footer,
-  .video-banner,
-  .order-buttons {
-    display: none;
   }
 
   .info,
