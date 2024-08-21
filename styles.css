@@ -15,12 +15,7 @@ header {
   align-items: center;
 }
 
-.logo img {
-  height: 200px;
-  width: auto;
-  display: block;
-}
-
+/* Show navigation on all devices */
 nav {
   width: 100%;
   text-align: center;
@@ -242,36 +237,22 @@ footer nav ul li {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .logo {
-    margin-bottom: 1rem; /* Space between logo and buttons */
-  }
-
-  .order-buttons {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery {
-    margin-top: 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
+  .logo img {
+    height: 150px; /* Adjust logo size for mobile */
   }
 
   nav {
-    display: flex; /* Keep navigation visible on small screens */
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem; /* Space between navigation and other elements */
+    display: block; /* Ensure navigation is visible */
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Reduce spacing between items */
   }
 
   .gallery-grid {
