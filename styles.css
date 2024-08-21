@@ -247,12 +247,16 @@ footer nav ul li {
   }
 
   nav ul {
-    flex-direction: column; /* Stack navigation items vertically */
+    display: flex; /* Align items horizontally */
+    flex-direction: row; /* Ensure horizontal layout */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if needed */
     padding: 0;
+    margin: 0;
   }
 
   nav ul li {
-    margin: 5px 0; /* Reduce spacing between items */
+    margin: 0 5px; /* Reduce spacing between items */
   }
 
   .gallery-grid {
