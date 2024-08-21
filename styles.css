@@ -249,7 +249,7 @@ footer nav ul li {
   }
 
   .logo img {
-    height: 100px;
+    height: 200px; /* Increased height for better visibility on mobile */
   }
 
   .video-banner {
