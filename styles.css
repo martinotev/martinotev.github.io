@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,23 +13,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow header items to wrap */
 }
 
 .logo img {
-  height: 250px;
+  height: auto; /* Ensure logo scales properly */
+  max-height: 150px; /* Limit max height */
 }
 
-/* Reset list styling */
+nav {
+  display: flex;
+}
+
 nav ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  display: flex; /* Arrange items in a horizontal row */
-  justify-content: center; /* Center the menu items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow menu items to wrap */
 }
 
 nav ul li {
-  margin: 0 10px; /* Add some spacing between menu items */
+  margin: 0 10px;
 }
 
 nav ul li a {
@@ -40,7 +47,7 @@ nav ul li a {
   position: relative;
   overflow: hidden;
   transition: color 0.4s ease, transform 0.4s ease;
-  display: block; /* Ensure the clickable area is consistent */
+  display: block;
 }
 
 /* Hover effect */
@@ -51,7 +58,7 @@ nav ul li a::before {
   height: 100%;
   top: 100%;
   left: 0;
-  background-color: #0038a7; /* Hover background color */
+  background-color: #0038a7;
   transition: top 0.4s ease;
   z-index: -1;
 }
@@ -61,48 +68,49 @@ nav ul li a.hovered::before {
 }
 
 nav ul li a.hovered {
-  transform: scale(1.05); /* Slightly enlarge the button */
-  color: #fff; /* Keep the text color white */
+  transform: scale(1.05);
+  color: #fff;
 }
 
+/* Info Section */
 .info {
   text-align: center;
-  padding: 0rem;
+  padding: 1rem;
 }
 
 .info h1 {
-  font-size: 3rem;
+  font-size: 2rem; /* Adjusted for mobile */
 }
 
+/* Order Buttons */
 .order-buttons {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack vertically on mobile */
+  align-items: center;
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-/* Button styles for anchor tags */
 .order-buttons a {
-  text-decoration: none; /* Ensure no underline */
+  text-decoration: none;
 }
 
 .doordash-btn,
 .direct-btn,
 .ubereats-btn {
-  padding: 0.5rem 1rem; /* Adjusted padding */
+  padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 50px; /* Rounded buttons */
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px;
   transition: all 0.3s ease;
-  font-size: 0.9rem; /* Smaller font size */
+  font-size: 0.9rem;
 }
 
-/* Specific button styles */
 .doordash-btn {
   background-color: #ff3008;
   color: #fff;
@@ -116,23 +124,12 @@ nav ul li a.hovered {
 .direct-btn {
   background-color: #0038a7;
   color: #fff;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px;
 }
 
+.doordash-btn:hover,
+.ubereats-btn:hover,
 .direct-btn:hover {
-  background-color: #222;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.doordash-btn:hover {
-  background-color: #222;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.ubereats-btn:hover {
   background-color: #222;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
@@ -141,76 +138,21 @@ nav ul li a.hovered {
 .doordash-btn img,
 .direct-btn img,
 .ubereats-btn img {
-  height: 20px; /* Adjusted icon size */
+  height: 20px;
   width: auto;
 }
 
-/* Button Styles */
-.primary-btn,
-.secondary-btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 8px; /* Add rounded corners */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.primary-btn {
-  background: linear-gradient(
-    135deg,
-    #ff6b6b,
-    #ff4757
-  ); /* Gradient background */
-  color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.primary-btn:hover {
-  background: linear-gradient(
-    135deg,
-    #ff4757,
-    #ff6b6b
-  ); /* Inverse gradient on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
-  transform: translateY(-2px); /* Lift the button on hover */
-}
-
-.secondary-btn {
-  background-color: #4ecdc4;
-  color: #fff;
-}
-
-.secondary-btn:hover {
-  background-color: #3bb5ad; /* Darken the background on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
-  transform: translateY(-2px); /* Lift the button on hover */
-}
-
-/* Make buttons in the banner highlight on hover */
-.order-buttons button:hover {
-  outline: 2px solid #fff; /* Highlight with a white border */
-}
-
-/* Adjust button styles for mobile devices */
-@media (max-width: 768px) {
-  .primary-btn,
-  .secondary-btn {
-    width: 100%; /* Make buttons full width on mobile */
-    padding: 1rem;
-  }
-}
-
+/* Video Banner */
 .video-banner {
   width: 100%;
-  height: 500px; /* Adjust this value as needed */
+  height: 300px; /* Adjust height for mobile */
   overflow: hidden;
   position: relative;
 }
 
 .video-banner video {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -220,6 +162,7 @@ nav ul li a.hovered {
   object-fit: cover;
 }
 
+/* Gallery */
 .gallery {
   padding: 2rem;
 }
@@ -231,13 +174,13 @@ nav ul li a.hovered {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -247,30 +190,19 @@ nav ul li a.hovered {
   transform: scale(1.05);
 }
 
-.gallery-grid img.animate {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
+/* Footer */
 footer {
   background-color: #1a1a1a;
   padding: 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
 }
 
 footer nav ul {
   list-style-type: none;
   padding: 0;
+  text-align: center;
 }
 
 footer nav ul li {
@@ -279,6 +211,8 @@ footer nav ul li {
 
 .subscribe {
   max-width: 300px;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .subscribe form {
@@ -299,7 +233,7 @@ footer nav ul li {
   cursor: pointer;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -317,7 +251,7 @@ footer nav ul li {
   }
 
   .video-banner {
-    height: 300px;
+    height: 200px;
   }
 
   .gallery-grid {
@@ -337,19 +271,7 @@ footer nav ul li {
     margin-top: 2rem;
     text-align: center;
   }
-}
 
-/* Additional styles */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -363,7 +285,17 @@ footer nav ul li {
   }
 }
 
-/* Lazy loading placeholder */
+/* Additional Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Lazy Loading Placeholder */
 .lazy {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -373,7 +305,7 @@ footer nav ul li {
   opacity: 1;
 }
 
-/* Form styles */
+/* Form Styles */
 form input[type="email"] {
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -394,7 +326,7 @@ form button[type="submit"]:hover {
   background-color: #ff4757;
 }
 
-/* Additional gallery styles */
+/* Additional Gallery Styles */
 .gallery-slideshow {
   position: relative;
   max-width: 800px;
@@ -424,7 +356,7 @@ form button[type="submit"]:hover {
   border-width: 0;
 }
 
-/* Print styles */
+/* Print Styles */
 @media print {
   body {
     background-color: #fff;
