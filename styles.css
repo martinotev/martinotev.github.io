@@ -88,6 +88,7 @@ nav ul li a.hovered {
 }
 
 .doordash-btn,
+.direct-btn,
 .ubereats-btn {
   padding: 0.5rem 1rem; /* Adjusted padding */
   border: none;
@@ -108,12 +109,25 @@ nav ul li a.hovered {
 }
 
 .ubereats-btn {
-  background-color: #000;
+  background-color: #06c167;
   color: #fff;
 }
 
+.direct-btn {
+  background-color: #0038a7;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.direct-btn:hover {
+  background-color: #222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
 .doordash-btn:hover {
-  background-color: #ff4a28;
+  background-color: #222;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
@@ -125,6 +139,7 @@ nav ul li a.hovered {
 }
 
 .doordash-btn img,
+.direct-btn img,
 .ubereats-btn img {
   height: 20px; /* Adjusted icon size */
   width: auto;
