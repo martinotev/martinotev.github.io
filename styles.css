@@ -1,0 +1,347 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+header {
+  background-color: #6e0000;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 250px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info {
+  text-align: center;
+  padding: 0rem;
+}
+
+.info h1 {
+  font-size: 3rem;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem; /* Add padding between the order buttons and the video */
+}
+
+/* Button Styles */
+.primary-btn,
+.secondary-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px; /* Add rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.primary-btn {
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #ff4757
+  ); /* Gradient background */
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.primary-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ff4757,
+    #ff6b6b
+  ); /* Inverse gradient on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+  transform: translateY(-2px); /* Lift the button on hover */
+}
+
+.secondary-btn {
+  background-color: #4ecdc4;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background-color: #3bb5ad; /* Darken the background on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  transform: translateY(-2px); /* Lift the button on hover */
+}
+
+/* Make buttons in the banner highlight on hover */
+.order-buttons button:hover {
+  outline: 2px solid #fff; /* Highlight with a white border */
+}
+
+/* Adjust button styles for mobile devices */
+@media (max-width: 768px) {
+  .primary-btn,
+  .secondary-btn {
+    width: 100%; /* Make buttons full width on mobile */
+    padding: 1rem;
+  }
+}
+
+.video-banner {
+  width: 100%;
+  height: 500px; /* Adjust this value as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.video-banner video {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.gallery {
+  padding: 2rem;
+}
+
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-grid img.animate {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.subscribe {
+  max-width: 300px;
+}
+
+.subscribe form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.subscribe input[type="email"] {
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+
+.subscribe button {
+  padding: 0.5rem 1rem;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .order-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-banner {
+    height: 300px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+/* Additional styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+}
+
+/* Lazy loading placeholder */
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+/* Form styles */
+form input[type="email"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #ff4757;
+}
+
+/* Additional gallery styles */
+.gallery-slideshow {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-slideshow img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.gallery-slideshow img:first-child {
+  display: block;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+
+  header,
+  footer,
+  .video-banner,
+  .order-buttons {
+    display: none;
+  }
+
+  .info,
+  .gallery {
+    page-break-inside: avoid;
+  }
+}
