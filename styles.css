@@ -296,6 +296,11 @@ footer nav ul li {
     gap: 0.5rem;
   }
 
+  .order-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .video-banner {
     height: 300px;
   }
@@ -409,6 +414,13 @@ form button[type="submit"]:hover {
   body {
     background-color: #fff;
     color: #000;
+  }
+
+  header,
+  footer,
+  .video-banner,
+  .order-buttons {
+    display: none;
   }
 
   .info,
