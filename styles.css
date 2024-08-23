@@ -9,7 +9,7 @@ body {
 
 header {
   background-color: #6e0000;
-  padding: 1rem;
+  padding: 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ nav ul li a.hovered {
 
 .info {
   text-align: center;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 .info h1 {
@@ -233,6 +233,10 @@ footer nav ul li {
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.logo img {
+  height: 250px;
 }
 
 /* Responsive adjustments */
