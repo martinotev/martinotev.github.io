@@ -19,6 +19,7 @@ header {
 nav {
   width: 100%;
   text-align: center;
+  padding: 1rem;
 }
 
 nav ul {
@@ -78,8 +79,9 @@ nav ul li a.hovered {
 
 .order-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center; /* Center the buttons horizontally */
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -357,4 +359,95 @@ form button[type="submit"]:hover {
   .gallery {
     page-break-inside: avoid;
   }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+/* Adjust gallery grid styles for larger previews */
+.menu-image {
+  width: 100%;
+  height: auto;
+  max-width: 250px; /* Increase the maximum width for larger previews */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Optionally, make images square */
+.menu-image {
+  width: 250px; /* Fixed width for larger previews */
+  height: 250px; /* Fixed height for larger previews */
+  object-fit: cover;
+}
+
+/* Add padding to the container of images */
+.gallery {
+  padding: 1rem;
+  padding-left: 2rem; /* Add left padding */
+  padding-right: 2rem; /* Add right padding */
+}
+
+/* Adjust gallery grid styles for appropriate spacing */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Ensure responsive grid */
+  gap: 0.5rem; /* Reduce the space between images */
+  padding: 0; /* Remove default padding */
+}
+
+/* Adjust image styles for consistent sizing and spacing */
+.menu-image {
+  width: 120%;
+  height: auto;
+  max-width: 250px; /* Ensure images are larger but not too large */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Ensure images zoom in smoothly */
+.menu-image:hover {
+  transform: scale(1.05);
+}
+
+/* Add padding to the container of images */
+.gallery {
+  padding: 1rem;
+  padding-left: 2rem; /* Add left padding */
+  padding-right: 2rem; /* Add right padding */
 }

@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-
       document.querySelector(this.getAttribute("href")).scrollIntoView({
         behavior: "smooth",
       });
@@ -114,4 +113,28 @@ document.addEventListener("DOMContentLoaded", function () {
       item.classList.remove("hovered");
     });
   });
+
+  // Image modal functionality
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  document.querySelectorAll(".menu-image").forEach((image) => {
+    image.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = image.src;
+      captionText.innerHTML = image.alt;
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 });

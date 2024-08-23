@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grill 21 - Gallery</title>
+    <title>Grill 21 - Menu</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -27,47 +27,31 @@
       </nav>
     </header>
 
-    <section id="gallery" class="gallery">
-      <!-- <h2>Gallery</h2> -->
+    <section id="menu" class="gallery">
+      <h2>Menu</h2>
       <div class="gallery-grid">
         <img
-          src="assets/image1.jpg"
-          alt="Food 1"
-          class="lazy"
-          data-src="assets/image1.jpg"
+          src="assets/menu1.jpg"
+          alt="Menu Item 1"
+          class="menu-image"
+          data-src="assets/menu2.jpg"
         />
         <img
-          src="assets/image2.jpg"
-          alt="Food 2"
-          class="lazy"
-          data-src="assets/image2.jpg"
+          src="assets/menu2.jpg"
+          alt="Menu Item 2"
+          class="menu-image"
+          data-src="assets/menu2.jpg"
         />
-        <img
-          src="assets/image3.jpg"
-          alt="Food 3"
-          class="lazy"
-          data-src="assets/image3.jpg"
-        />
-        <img
-          src="assets/image4.jpg"
-          alt="Food 4"
-          class="lazy"
-          data-src="assets/image4.jpg"
-        />
-        <img
-          src="assets/image5.jpg"
-          alt="Food 5"
-          class="lazy"
-          data-src="assets/image5.jpg"
-        />
-        <img
-          src="assets/image6.jpg"
-          alt="Food 6"
-          class="lazy"
-          data-src="assets/image6.jpg"
-        />
+        <!-- Add more menu images as needed -->
       </div>
     </section>
+
+    <!-- Modal for zooming images -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="caption"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
